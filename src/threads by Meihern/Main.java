@@ -8,11 +8,14 @@ public class Main {
             tab1[i] = i*2;
             tab2[i] = (i+1)*3;
         }
-        TableauThread1 thread1 = new TableauThread1(tab1);
-        TableauThread2 thread2 = new TableauThread2(tab2);
-        thread1.join();
-        thread2.join();
+        TableauThread thread1 = new TableauThread(tab1);
+        TableauThread thread2 = new TableauThread(tab2);
         thread1.start();
         thread2.start();
+        thread1.join();
+        thread2.join();
+
+
+        System.out.println("Fin du programme");
     }
 }
